@@ -18,8 +18,10 @@ public class Main {
                 boolean can = true;
 
                 for(int j=0;j<n2;j++){
-                    if(i+j>=n1)
-                    break;
+                    if(i+j>=n1){
+                        can = false;
+                        break;
+                    }
                     if(a[i+j] != b[j]){
                         can = false;
                         break;
