@@ -8,12 +8,12 @@ public class Main {
         int k = sc.nextInt();
         int[] arr = new int[n];
         int count = 0;
-        HashSet<Integer> sumMap = new HashSet<>();
+        HashMap<Integer,Integer> sumMap = new HashMap<>();
         for (int i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
-            if(sumMap.contains(k-arr[i]))
-                count++;
-            sumMap.add(arr[i]);
+            Integer a = sumMap.getOrDefault(Integer.valueOf(k-arr[i]),0);
+            count += a;
+            sumMap.put(arr[i],sumMap.getOrDefault(Integer.valueOf(arr[i]),0)+1);
         }
         // Please write your code here.
         System.out.println(count);
