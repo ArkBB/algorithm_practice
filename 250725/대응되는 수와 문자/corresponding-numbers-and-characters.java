@@ -8,19 +8,21 @@ public class Main {
         int m = sc.nextInt();
         String[] words = new String[n + 1];
         
-        HashMap<String, String> hashmap = new HashMap<>();
+        HashMap<String, Integer> StringToNum = new HashMap<>();
 
         for (int i = 1; i <= n; i++) {
             words[i] = sc.next();
-            hashmap.put(words[i],String.valueOf(i));
-            hashmap.put(String.valueOf(i),words[i]);
+            StringToNum.put(words[i],i);     
         }
-        // Please write your code here.
-        String[] words2 = new String[m + 1];
-        for(int i = 1; i<=m;i++) {
-            words2[i] = sc.next();
-            System.out.println(hashmap.get(words2[i]));
-        }  
+        while(m-- > 0) {
+            String key = sc.next();
+
+        
+            if('0' <= key.charAt(0) && key.charAt(0) <= '9')
+                System.out.println(words[Integer.parseInt(key)]);
+            else
+                System.out.println(StringToNum.get(key));
+        }
 
     }
 }
