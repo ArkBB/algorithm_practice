@@ -23,7 +23,7 @@ public class Main {
             if(countMap.get(queries[i]) != null)
             System.out.print(countMap.get(queries[i])+ " ");
             else
-            System.out.println(0 + " ");
+            System.out.print(0 + " ");
         }
 
     }
