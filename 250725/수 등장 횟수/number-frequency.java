@@ -9,7 +9,7 @@ public class Main {
         int[] arr = new int[n];
 
         HashMap<Integer,Integer> countMap = new HashMap<>();
-
+        StringBuilder sb = new StringBuilder();
 
         for (int i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
@@ -21,10 +21,13 @@ public class Main {
         for (int i = 0; i < m; i++) {
             queries[i] = sc.nextInt();
             if(countMap.get(queries[i]) != null)
-            System.out.print(countMap.get(queries[i])+ " ");
+            sb.append(countMap.get(queries[i])+ " ");
+        
             else
-            System.out.print(0 + " ");
+            sb.append(0 + " ");
         }
+
+        System.out.print(sb);
 
     }
 }
