@@ -9,23 +9,17 @@ public class Main {
             arr[i] = sc.nextInt();
         }
         // Please write your code here.
-        for(int i = n-1; i>= 0;i--) {
-            int max = -1;
-            int idx = -1;
-            for(int j = 0; j<=i; j++) {
-                if(max<arr[j])
+        for(int i = 0; i< n-1;i++) {
+            int minIndex = i;
+            for(int j = i+1; j<n-1; j++) {
+                if(arr[minIndex]>arr[j])
                     {
-                        max = arr[j];
-                        idx = j;
+                        minIndex = j;
                     }
-
             }
-            if(max != -1) {
-            int temp = arr[i];
-            arr[i] = max;
-            arr[idx] = temp;
-            }
-
+           int temp = arr[i];
+           arr[i] = arr[minIndex];
+           arr[minIndex] = temp;
         }
 
         for(int i= 0; i<n; i++) {
